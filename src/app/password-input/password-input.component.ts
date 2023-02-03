@@ -10,7 +10,7 @@ export class PasswordInputComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
   form = this.formBuilder.group({
-    password:[null, [Validators.required]]
+    password:['', [Validators.required]]
   })
 
   ngOnInit(): void {
