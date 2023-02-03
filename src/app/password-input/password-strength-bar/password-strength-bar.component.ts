@@ -7,6 +7,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class PasswordStrengthBarComponent implements OnChanges {
   @Input() passwordToRead!: string | null | undefined;
+  force: number = 0;
   constructor() {}
 
   private passwordStrength(password: string) {
@@ -23,6 +24,6 @@ export class PasswordStrengthBarComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     const password = changes['passwordToRead'].currentValue;
-    this.passwordStrength(password);
+    this.force = this.passwordStrength(password);
   }
 }
